@@ -1,0 +1,80 @@
+<h1>GeekTwitter</h1>
+<h3>新規Tweet</h3>
+<%= form_for @tweet do |f| %>
+<div class="field">
+    <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
+
+<div class="field">
+  <%= f.label :price %>
+  <%= f.number_field :price %>
+</div>
+
+<div class="field">
+  <%= f.label :review %>
+  <%= f.text_field :review %>
+</div>
+
+<div class="field">
+  <%= f.label :comment %>
+  <%= f.text_field :comment, size: 140 %>
+</div>
+
+<div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+</div>
+
+<%= f.submit "Tweetする" %>
+<% end %>
+<%= link_to "Tweet一覧に戻る", tweets_path %>
+
+<%= form_for(@tweet, class: 'form-horizontal', role: 'form') do |f| %>
+            <div class="container-sindan">
+                <div class="row">
+                    <div class="col-12">
+                        <p>Question1. どちらかと言うと…</p>
+                    </div>
+                    <div class="col-6">
+                        <p><%= f.check_box :question, {multiple: true}, "1", nil %>じっくり考える方だ</p>
+                    </div>
+                    <div class="col-6">
+                        <p><%= f.check_box :question, {multiple: true}, "2", nil %>考えるより行動する方だ</p>
+                    </div>
+
+                    <div class="col-12">
+                        <p>Question2. 自分の価値観として近い方は…</p>
+                    </div>
+                    <div class="col-6">
+                        <p><%= f.check_box :question, {multiple: true}, "1", nil %>周りの人と違う存在でありたい</p>
+                    </div>
+                    <div class="col-6">
+                        <p><%= f.check_box :question, {multiple: true}, "2", nil %>周りと同じでいたい</p>
+                    </div>
+
+                    <div class="col-12">
+                        <p>Question3. 人と接するときは…</p>
+                    </div>
+                    <div class="col-6">
+                        <p><%= f.check_box :question, {multiple: true}, "1", nil %>相手の話をよく聞く方だ</p>
+                    </div>
+                    <div class="col-6">
+                        <p><%= f.check_box :question, {multiple: true}, "2", nil %>自分の話をよくする方だ</p>
+                    </div>
+
+                    <div class="col-12">
+                        <p>Question4. 大切にしたいのは…</p>
+                    </div>
+                    <div class="col-6">
+                        <p><%= f.check_box :question, {multiple: true}, "1", nil %>論理性だ</p>
+                    </div>
+                    <div class="col-6">
+                        <p><%= f.check_box :question, {multiple: true}, "2", nil %>情緒だ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="sindanbotan">
+                <%= f.submit "post" %>
+            </div>
+<% end %>
