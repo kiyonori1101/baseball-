@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   get 'hello/index' => 'hello#index'
   get 'hello/link' => 'hello#link'
   resources :tweets
+  resources :baseballs
   root 'hello#index'
 end

@@ -28,6 +28,6 @@ local:
 
 cloudinary:
   service: Cloudinary
-  cloud_name: <%= ENV['dhsfgfewl'] %>
-  api_key: <%= ENV['CLOUDINARY_862666731219516'] %>
-  api_secret: <%= ENV['CLOUDINARY_lCfrQ_-Uq0Z2LvRT-gDPkth-4Ts'] %>
+  cloud_name: <%= ENV['CLOUD_NAME'] %>
+  api_key: <%= ENV['CLOUDINARY_API_KEY'] %>
+  api_secret: <%= ENV['CLOUDINARY_API_SECRET'] %>

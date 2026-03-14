@@ -34,46 +34,4 @@
   <% end %>
 </div>
 
-<!DOCTYPE html> <!--　この文章がHTML文章であることを伝える要素です。-->
-<html lang="ja"><!--言語の指定-->
-    <head><!--ページに表示されない情報(サイトの裏側の設定)-->
-        <meta charset="utf-8">
-        <title>グローブ診断スタート</title><!--ブラウザのタブのタイトルを指定-->
-    </head>
-
-    <body>
-        <header>
-            <h1 class="headline">
-            <a>Tweet</a>
-            </h1>
-            <ul class="nav-list">
-                <li class="nav-list-item">about 重視すること</li>
-                <li class="nav-list-item"><%= link_to "診断", tweets_path, class: "link" %></li>
-            </ul>
-        </header>
-
-        <div class="start">
-            <h6>Are you ready?</h6>
-            <%= link_to "診断を始める", new_tweet_path, class: "link" %>
-        </div>
-    </body>
-
-
     <%= stylesheet_link_tag 'index', :media => "all" %>
-
-<div class="tweets-container">
-<h3>Tweet一覧</h3>
-  <% @tweets.each do |t| %>
-    <div class="tweet">
-      <div class="main-box">
-        <div class="left-container"><%= t.comment %></div>
-        <div class="right-container">
-          <%= link_to "詳細", tweet_path(t.id) %>
-          <%= link_to "編集", edit_tweet_path(t.id) %>
-          <%= link_to "削除", tweet_path(t.id), method: :delete %>
-        </div>
-      </div>
-        <p class="time"><%= t.created_at %></p>
-    </div>
-  <% end %>
-</div>
